@@ -8,8 +8,19 @@ android {
         targetSdkVersion project.TARGET_SDK_VERSION
         versionCode project.VERSION_CODE
         versionName project.VERSION_NAME
-    }
 
+        externalNativeBuild {
+            cmake {
+                cppFlags ''
+                abiFilters 'arm64-v8a'
+            }
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false

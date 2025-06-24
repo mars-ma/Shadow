@@ -33,6 +33,7 @@ import android.widget.TextView;
 
 import com.tencent.shadow.sample.plugin.app.lib.base.R;
 import com.tencent.shadow.sample.plugin.app.lib.gallery.cases.entity.UseCase;
+import com.tencent.shadow.sample.plugin.app.lib.gallery.util.Native;
 import com.tencent.shadow.sample.plugin.app.lib.gallery.util.PluginChecker;
 
 public class UseCaseSummaryFragment extends Fragment {
@@ -104,7 +105,8 @@ public class UseCaseSummaryFragment extends Fragment {
         mCaseSummary = (TextView) view.findViewById(R.id.case_summary);
         mEnvironment = (TextView) view.findViewById(R.id.environment);
 
-        mEnvironment.setText(PluginChecker.isPluginMode() ? "当前环境：插件模式" : "当前环境：独立安装");
+        mEnvironment.setText(PluginChecker.isPluginMode() ? "当前环境：插件模式1" : "当前环境：独立安装2");
+        mEnvironment.setText(Native.stringFromJNI());
     }
 
 }
